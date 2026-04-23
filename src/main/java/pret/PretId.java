@@ -59,4 +59,36 @@ public class PretId implements Serializable {
     public void setCreationDateTime(LocalDateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
+    
+    @Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((livre == null) ? 0 : livre.hashCode());
+		result = prime * result + ((client == null) ? 0 : client.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PretId other = (PretId) obj;
+		if (livre == null) {
+			if (other.livre != null)
+				return false;
+		} else if (!livre.equals(other.livre))
+			return false;
+		if (client == null) {
+			if (other.client != null)
+				return false;
+		} else if (!client.equals(other.client))
+			return false;
+		return true;
+	}
+
 }
