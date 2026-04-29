@@ -19,13 +19,6 @@ public class SimplePretDTO {
 	@ApiModelProperty(value = "Loan ending date")
 	private LocalDate endDate;
 
-    public SimplePretDTO() {
-    }
-
-    public SimplePretDTO(Integer livreId, Integer clientId) {
-        this.livreId = livreId;
-        this.clientId = clientId;
-    }
 
     public Integer getLivreId() {
         return livreId;
@@ -34,7 +27,7 @@ public class SimplePretDTO {
     public void setLivreId(Integer livreId) {
         this.livreId = livreId;
     }
-
+    
     public Integer getClientId() {
         return clientId;
     }
